@@ -1,0 +1,15 @@
+:root {
+    --main-bg-color: #000000;
+    --secondary-bg-color: #070707;
+    --accent-color: #ff7000;
+    --text-color: #ffffff;
+}
+
+.navbar {
+    justify-content: center;
+    text-align: center;
+}
+
+body {
+    overflow-y: auto;
+}

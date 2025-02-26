@@ -1,0 +1,32 @@
+:root {
+    --main-bg-color: #000000;
+    --secondary-bg-color: #070707;
+    --accent-color: #E526CB;
+    --text-color: #ffffff;
+    --online-color: #00ff00;
+    --unknown-color: #ffff00;
+    --offline-color: #ff0000;
+}
+
+body {
+    overflow-y: auto;
+}
+
+.linkey-online {
+    color: var(--online-color) !important;
+    text-shadow: 0 0 5px var(--online-color), 0 0 15px var(--accent-color);
+}
+
+.linkey-unknown {
+    color: var(--unknown-color) !important;
+    text-shadow: 0 0 5px var(--unknown-color), 0 0 15px var(--accent-color);
+}
+
+.linkey-offline {
+    color: var(--offline-color) !important;
+    text-shadow: 0 0 5px var(--offline-color), 0 0 15px var(--accent-color);
+}
+
+.page-button-hidden {
+    visibility: hidden;
+}

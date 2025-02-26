@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BYOD | Benrogo</title>
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="byod.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div>
+            <a class="nav-header" href="/"><img id="logo" src="/logo.png"> Benrogo.net</a>
+            <a class="nav-item" href="/linkies/">Linkies</a>
+            <a class="nav-item" href="/about/">About</a>
+            <a class="nav-item" href="/partners/">Partners</a>
+            <a class="nav-item" href="https://benrogo.net/disc">Discord</a>
+        </div>
+    </nav>
+
+    <div class="wrapper">
+        <div class="main-content">
+            <h1>BYOD (Bring Your Own Domain)</h1>
+            <p>BYOD allows you to make your own domain for Benrogo.net! All it requires you to do is make some DNS entries and submit
+            your domain!</p>
+            <p>First, make a DNS A record to this IP address: <p class="ip">5.161.233.190</p></p>
+            <p>If you need to use IPv6 too, make an AAAA record to <p class="ip">2a01:4ff:f0:dd7c::1</p></p>
+            <p>If you're using Cloudflare, TURN PROXY OFF</p>
+            <p>AFTER making these records, put your domain below and click submit! Please note that depending on your DNS provider it
+            can take up to 24 hours for your site to come online, but most will work almost immediately!</p>
+
+        <form id="domain-form" action="/register-domain" ,="" method="post">
+            <input id="domain-input" type="text" name="domain" placeholder="Enter domain :D"><br>
+            <input id="submit-button" type="submit" value="Submit">
+        </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-items">
+            <a href="/privacypolicy/">Privacy Policy</a>
+            <a href="/contact/">Contact Us</a>
+            <a href="/status/">Network Status</a>
+            <a href="/byod/">BYOD</a>
+            <a href="/donate/">Donate</a>
+        </div>
+        <p>Copyright &copy; 2025 Benrogo. All rights reserved.</p>
+    </footer>
+    <div id="particles-js"></div>
+    <script src="/js/particles.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>

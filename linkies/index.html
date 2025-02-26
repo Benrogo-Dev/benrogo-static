@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L1nkies | Benrogo</title>
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="linkies.css">
+    <link rel="icon" href="/favicon.png">
+</head>
+<body>
+    <nav class="navbar">
+        <div>
+            <a class="nav-header" href="/"><img id="logo" src="/logo.png"> Benrogo.net</a>
+            <a class="nav-item" href="/linkies/">Linkies</a>
+            <a class="nav-item" href="/about/">About</a>
+            <a class="nav-item" href="/partners/">Partners</a>
+            <a class="nav-item" href="https://benrogo.net/disc">Discord</a>
+        </div>
+    </nav>
+
+
+    <div class="wrapper">
+        <div class="linkies-content">
+            <h1>Linkies Leaderboard</h1>
+            <p>Linkies checked every 10 minutes and updated every hour!!</p>
+            <table class="linkies-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>URL</th>
+                        <th>Requests (1mo)</th>
+                    </tr>
+                </thead>
+                <tbody id="linkies-body">
+                    <!--
+                    <tr>
+                        <td>1</td>
+                        <td><a href="https://www.google.com" target="_blank" class="linkey-online">https://www.example.com</a></td>
+                        <td>1,200,453</td>
+                    </tr>
+                    -->
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">
+                            <a id="backbutton">&lt;</a>
+                             Page <span id="pagenumber"></span> 
+                             <a id="forwardbutton">&gt;</a>
+                        </td>
+                    </tr>
+                </tfoot>
+                <script src="/js/linkies.js"></script>
+            </table>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="footer-items">
+            <a href="/privacypolicy/">Privacy Policy</a>
+            <a href="/contact/">Contact Us</a>
+            <a href="/status/">Network Status</a>
+            <a href="/byod/">BYOD</a>
+            <a href="/donate/">Donate</a>
+        </div>
+        <p>Copyright &copy; 2025 Benrogo. All rights reserved.</p>
+    </footer>
+    <div id="particles-js"></div>
+    <script src="/js/particles.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>
