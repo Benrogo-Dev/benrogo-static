@@ -13,7 +13,9 @@ async function getStats() {
             requestCounter.innerText = formatObject.format(stats[i].stat_value);
         }
         if (stats[i].stat_name === "request_size") {
-            sizeCounter.innerText = formatObject.format(stats[i].stat_value);
+            sizeCounter.innerText = formatObject.format(
+                Math.round(stats[i].stat_value / 1073741824)
+            );
         }
     }
 }
