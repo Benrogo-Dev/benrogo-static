@@ -10,6 +10,10 @@
 #                                                  |  $$$$$$/          
 #                                                   \______/           
 
+# +-------------------+
+# | Fuck it, we ball! |
+# +-------------------+
+
 User-agent: *
 Disallow: /status/
 Disallow: /maintenance/
