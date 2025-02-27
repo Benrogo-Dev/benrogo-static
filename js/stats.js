@@ -4,7 +4,7 @@ const formatObject = Intl.NumberFormat("en-US");
 
 async function getStats() {
     const statsResponse = await fetch(
-        "/edge-api/getStats"
+        "/api/v2/getStats"
     );
     const stats = await statsResponse.json();
 
