@@ -15,7 +15,6 @@ export function createCachedResponse(body, contentType, source, cache, cacheKey)
 }
 
 export async function onRequest(context) {
-  const DB = await mf.getD1Database("DB");
   const { env } = context;
   const cache = caches.default;
   const cacheKey = new Request(context.request.url, context.request);

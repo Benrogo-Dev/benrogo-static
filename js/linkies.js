@@ -22,7 +22,7 @@ async function getSites() {
     }
 
     const nextPageStatusResponse = await fetch(
-        `/api/v2/getPageStatus?page=${linksPage + 1}`
+        `/edge-api/getPageStatus?page=${linksPage + 1}`
     );
 
     const nextPageStatus = await nextPageStatusResponse.json();
@@ -34,7 +34,7 @@ async function getSites() {
     }
 
     const edgeAPIResponse = await fetch(
-        `/api/v2/getSites?page=${linksPage}`
+        `/edge-api/getSites?page=${linksPage}`
     );
 
     const edgeAPIText = await edgeAPIResponse.text();
