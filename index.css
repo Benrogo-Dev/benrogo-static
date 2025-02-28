@@ -285,23 +285,32 @@ td {
     text-decoration: underline;
 }
 
-tfoot {
+.linkies-table tfoot {
+    border: none;
+}
+
+.linkies-table tfoot td {
+    border: none;
+    padding-top: 1rem;
+}
+
+.pagination-controls {
     text-align: center;
-    font-size: 3rem;
-}
-
-tfoot a {
-    cursor: pointer;
-}
-
-tfoot td {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
     text-shadow: 0 0 5px #ffffff, 0 0 15px var(--accent-color);
 }
 
+.pagination-controls a {
+    cursor: pointer;
+    margin: 0 0.5rem;
+}
+
 @media (max-width: 768px) {
-    tfoot {
-            font-size: 2rem;
-        }
+    .pagination-controls {
+        font-size: 1.2rem;
+    }
     
     th:first-child, td:first-child {
         display: none;
@@ -311,4 +320,3 @@ tfoot td {
 .redirect {
     text-align: center;
 }
-
