@@ -32,6 +32,10 @@
     transition: all 0.3s ease-in-out;
 }
 
+.main-content button {
+    text-shadow: inherit;
+}
+
 .main-content button:hover {
     background-color: rgba(242, 48, 41, 0.15);
     transform: scale(1.05);
