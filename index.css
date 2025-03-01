@@ -2,6 +2,7 @@
     --main-bg-color: #000000;
     --secondary-bg-color: #070707;
     --accent-color: #E526CB;
+    --secondary-accent-color: #24f2e1;
     --text-color: #ffffff;
 }
 
@@ -296,6 +297,7 @@ td {
 
 .main-content a {
     color: var(--accent-color);
+    text-shadow: 0 0 8px var(--accent-color), 0 0 15px var(--accent-color);
     font-weight: bold;
     text-decoration: none;
     position: relative;
@@ -327,9 +329,9 @@ td {
 }
 
 #requestcounter, #sizecounter {
-    color: var(--accent-color);
+    color: var(--secondary-accent-color);
     font-weight: bold;
-    text-shadow: 0 0 10px var(--accent-color);
+    text-shadow: 0 0 10px var(--secondary-accent-color);
 }
 
 @media (max-width: 768px) {
@@ -446,4 +448,9 @@ td {
 
 .redirect {
     text-align: center;
+}
+
+.credits-name {
+    color: var(--secondary-accent-color);
+    text-shadow: 0 0 10px var(--secondary-accent-color);
 }
