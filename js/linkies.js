@@ -4,6 +4,9 @@ const backButton = document.getElementById("backbutton");
 const forwardButton = document.getElementById("forwardbutton");
 const pageNumber = document.getElementById("pagenumber");
 
+// API host settings (DISABLE FOR PRODUCTION)
+const APIHost = window.location.host.includes("localhost") ? "https://benrogo.net" : "";
+
 // Number formatting
 const formatObject = Intl.NumberFormat("en-US");
 
@@ -54,7 +57,7 @@ async function getSites() {
     }
 
     // Check if next page exists
-    const nextPageStatusResponse = await fetch(`/edge-api/getPageStatus?page=${linksPage + 1}`);
+    const nextPageStatusResponse = await fetch(`${APIHost}/edge-api/getPageStatus?page=${linksPage + 1}`);
     const nextPageStatus = await nextPageStatusResponse.json();
     if (nextPageStatus) {
         forwardButton.href = `/linkies?page=${linksPage + 1}`;
@@ -63,7 +66,7 @@ async function getSites() {
     }
 
     // Fetch and decode site data
-    const edgeAPIResponse = await fetch(`/edge-api/getSites?page=${linksPage}`);
+    const edgeAPIResponse = await fetch(`${APIHost}/edge-api/getSites?page=${linksPage}`);
     const edgeAPIText = await edgeAPIResponse.text();
     const [shiftedText, shiftValue] = edgeAPIText.split(":");
     const unshiftedText = shiftText(shiftedText, Number(shiftValue) * -1);
