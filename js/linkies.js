@@ -54,7 +54,7 @@ async function getSites() {
     }
 
     // Check if next page exists
-    const nextPageStatusResponse = await fetch(`https://benrogo.net/edge-api/getPageStatus?page=${linksPage + 1}`);
+    const nextPageStatusResponse = await fetch(`/edge-api/getPageStatus?page=${linksPage + 1}`);
     const nextPageStatus = await nextPageStatusResponse.json();
     if (nextPageStatus) {
         forwardButton.href = `/linkies?page=${linksPage + 1}`;
@@ -63,7 +63,7 @@ async function getSites() {
     }
 
     // Fetch and decode site data
-    const edgeAPIResponse = await fetch(`https://benrogo.net/edge-api/getSites?page=${linksPage}`);
+    const edgeAPIResponse = await fetch(`/edge-api/getSites?page=${linksPage}`);
     const edgeAPIText = await edgeAPIResponse.text();
     const [shiftedText, shiftValue] = edgeAPIText.split(":");
     const unshiftedText = shiftText(shiftedText, Number(shiftValue) * -1);
