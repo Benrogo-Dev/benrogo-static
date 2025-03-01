@@ -1,5 +1,7 @@
 .ip {
     color: #24F2E1;
+    font-size: 2rem !important;
+    font-weight: bold;
     margin: 0;
 }
 

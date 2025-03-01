@@ -2,3 +2,8 @@
     font-size: 3rem !important;
     margin: 20px;
 }
+
+.donatetext a {
+    color: var(--text-color);
+    text-decoration: underline;
+}
