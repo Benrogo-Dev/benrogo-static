@@ -27,6 +27,16 @@ body {
     text-shadow: 0 0 5px var(--offline-color), 0 0 15px var(--accent-color);
 }
 
+td a {
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}
+
+td a > span {
+    display: none;
+}
+
 .page-button-hidden {
     visibility: hidden;
 }
