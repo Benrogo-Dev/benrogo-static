@@ -98,7 +98,6 @@ async function getSites() {
         
         let requestsColumn = document.createElement("td");
         requestsColumn.innerText = formatObject.format(requests);
-        console.log(requestsColumn.text);
         tableRow.appendChild(requestsColumn);
         
         linkTable.appendChild(tableRow);
