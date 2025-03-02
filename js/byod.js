@@ -16,7 +16,6 @@ async function registerBYOD(event) {
         } else {
             displayNotification(`Error: ${registrationStatusJSON.error}`);
         }
-        console.log(registrationStatusJSON);
     }
 }
 
