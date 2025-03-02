@@ -42,3 +42,32 @@ function closeNotification(element) {
         element.remove();
     });
 }
+
+// Announcement fetching
+async function fetchAnnouncement() {
+    try {
+        const response = await fetch('https://dev.benrogo.net/edge-api/getAnnouncement');
+        if (response.ok) {
+          const announcement = await response.text();
+          return announcement
+        } else {
+            console.error('Error fetching announcement: ', response.statusText);
+            return null;
+        }
+    } catch (error) {
+        console.error('Error fetching announcement: ', error);
+        return null;
+    }
+}
+
+// Announcement handler
+async function handleAnnouncement() {
+    const storedAnnouncement = localStorage.getItem('announcement');
+    const currentAnnouncement = await fetchAnnouncement();
+    if (currentAnnouncement && currentAnnouncement !== storedAnnouncement) {
+        displayNotification(currentAnnouncement);
+        localStorage.setItem('announcement', currentAnnouncement);
+    }
+}
+
+document.addEventListener("load", handleAnnouncement());
