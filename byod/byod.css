@@ -14,22 +14,54 @@ p {
     height: 50px;
     text-align: center;
     color: var(--text-color);
-    padding: 5px;
-    border-radius: 3px;
-    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
     background: none;
     border: 3px solid var(--accent-color);
     box-shadow: 0 0 15px var(--accent-color);
+    font-size: 1.1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-shadow: 0 0 5px #ffffff, 0 0 15px var(--accent-color);
+}
+
+#domain-input:focus {
+    outline: none;
+    box-shadow: 0 0 20px var(--accent-color), 0 0 40px rgba(229, 38, 203, 0.4);
+    transform: translateY(-2px);
+}
+
+#domain-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
 #submit-button {
-    padding: 10px 20px;
+    padding: 12px 24px;
     background: none;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
+    color: var(--text-color);
     border: 3px solid var(--accent-color);
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
     box-shadow: 0 0 15px var(--accent-color);
-    margin-top: 5px;
+    text-shadow: 0 0 5px #ffffff, 0 0 15px var(--accent-color);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+#submit-button:hover {
+    background-color: rgba(229, 38, 203, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px var(--accent-color), 0 0 40px rgba(229, 38, 203, 0.4);
+}
+
+#submit-button:active {
+    transform: scale(0.95) translateY(-2px);
+    background-color: rgba(229, 38, 203, 0.2);
+    box-shadow: 0 0 30px var(--accent-color), 0 0 50px rgba(229, 38, 203, 0.5);
+    transition: all 0.05s cubic-bezier(0.2, 0, 0, 1);
 }
