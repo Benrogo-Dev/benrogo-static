@@ -5,7 +5,7 @@ const forwardButton = document.getElementById("forwardbutton");
 const pageNumber = document.getElementById("pagenumber");
 
 // API host settings (DISABLE FOR PRODUCTION)
-const APIHost = window.location.host.includes("localhost") ? "https://benrogo.net" : "";
+const APIHost = window.location.host.includes("localhost") ? "https://dev.benrogo.net" : "";
 
 // Number formatting
 const formatObject = Intl.NumberFormat("en-US");
@@ -49,6 +49,13 @@ async function getSites() {
     const linksPage = Number(urlParams.get("page")) || 1;
     pageNumber.innerText = linksPage;
 
+    // Fetch and decode site data
+    const edgeAPIResponse = await fetch(`${APIHost}/edge-api/getSites?page=${linksPage}`);
+    const edgeAPIText = await edgeAPIResponse.text();
+    const [shiftedText, shiftValue, cipher] = edgeAPIText.split(":");
+    const unshiftedText = shiftText(shiftedText, Number(shiftValue) * -1);
+    sitesJSON = JSON.parse(atob(unshiftedText));
+
     // Handle back button
     if (linksPage === 1) {
         backButton.classList.add("page-button-hidden");
@@ -56,24 +63,14 @@ async function getSites() {
         backButton.href = `/linkies?page=${linksPage - 1}`;
     }
 
-    // Check if next page exists
-    const nextPageStatusResponse = await fetch(`${APIHost}/edge-api/getPageStatus?page=${linksPage + 1}`);
-    const nextPageStatus = await nextPageStatusResponse.json();
-    if (nextPageStatus) {
+    if (sitesJSON.length > 80) {
         forwardButton.href = `/linkies?page=${linksPage + 1}`;
     } else {
         forwardButton.classList.add("page-button-hidden");
     }
 
-    // Fetch and decode site data
-    const edgeAPIResponse = await fetch(`${APIHost}/edge-api/getSites?page=${linksPage}`);
-    const edgeAPIText = await edgeAPIResponse.text();
-    const [shiftedText, shiftValue] = edgeAPIText.split(":");
-    const unshiftedText = shiftText(shiftedText, Number(shiftValue) * -1);
-    sitesJSON = JSON.parse(atob(unshiftedText));
-
     // Populate table
-    sitesJSON.forEach((site, i) => {
+    sitesJSON.slice(0, 80).forEach((site, i) => {
         let url = atob(site["u"]);
         let requests = site["r"];
         let status = site["s"];
