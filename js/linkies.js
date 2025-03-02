@@ -4,9 +4,6 @@ const backButton = document.getElementById("backbutton");
 const forwardButton = document.getElementById("forwardbutton");
 const pageNumber = document.getElementById("pagenumber");
 
-// API host settings (DISABLE FOR PRODUCTION)
-const APIHost = window.location.host.includes("localhost") ? "https://dev.benrogo.net" : "";
-
 // Number formatting
 const formatObject = Intl.NumberFormat("en-US");
 
@@ -50,7 +47,7 @@ async function getSites() {
     pageNumber.innerText = linksPage;
 
     // Fetch and decode site data
-    const edgeAPIResponse = await fetch(`${APIHost}/edge-api/getSites?page=${linksPage}`);
+    const edgeAPIResponse = await fetch(`/edge-api/getSites?page=${linksPage}`);
     const edgeAPIText = await edgeAPIResponse.text();
     const [shiftedText, shiftValue, cipher] = edgeAPIText.split(":");
     const unshiftedText = shiftText(shiftedText, Number(shiftValue) * -1);
