@@ -31,7 +31,7 @@ function displayNotification(message) {
     // Set timeout to close notification after 6 seconds
     const timeout = setTimeout(() => {
         closeNotification(notificationElement);
-    }, 6000);
+    }, 10000);
 
     // Store timeout ID to clear if closed manually
     notificationElement.dataset.timeoutId = timeout;

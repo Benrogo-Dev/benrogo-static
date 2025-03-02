@@ -547,7 +547,7 @@ td {
     left: 0;
     height: 3px;
     width: 100%;
-    transition: width 6s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: width 10s cubic-bezier(0.4, 0, 0.2, 1);
     background: var(--secondary-accent-color);
     border-radius: 0;
     box-shadow: 0 0 10px var(--secondary-accent-color);
