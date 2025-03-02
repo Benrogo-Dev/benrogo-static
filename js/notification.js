@@ -17,27 +17,30 @@ function displayNotification(message) {
     notificationStatusBar.classList.add("progressbar");
     notificationElement.appendChild(notificationStatusBar);
 
-    setTimeout(() => {
+    // Ensure progress bar starts at full width
+    notificationStatusBar.style.width = "100%";
+
+    // Force reflow before starting animation (fixes cases where animation doesn't trigger)
+    notificationStatusBar.offsetWidth; // This line forces the browser to recognize the element before animating
+
+    // Apply transition for the progress bar
+    requestAnimationFrame(() => {
         notificationStatusBar.style.width = "0%";
-    }, 1);
+    });
 
     // Set timeout to close notification after 6 seconds
     const timeout = setTimeout(() => {
         closeNotification(notificationElement);
-    }, 6001);
+    }, 6000);
 
     // Store timeout ID to clear if closed manually
     notificationElement.dataset.timeoutId = timeout;
 }
 
+
 function closeNotification(element) {
-    // Clear the timeout to prevent duplicate close attempts
     clearTimeout(Number(element.dataset.timeoutId));
-    
-    // Add closing animation class
     element.classList.add("closing");
-    
-    // Remove element after animation completes
     element.addEventListener("animationend", () => {
         element.remove();
     });
@@ -46,10 +49,10 @@ function closeNotification(element) {
 // Announcement fetching
 async function fetchAnnouncement() {
     try {
-        const response = await fetch('https://dev.benrogo.net/edge-api/getAnnouncement');
+        const response = await fetch('/edge-api/getAnnouncement');
         if (response.ok) {
-          const announcement = await response.text();
-          return announcement
+            const announcement = await response.text();
+            return announcement;
         } else {
             console.error('Error fetching announcement: ', response.statusText);
             return null;
