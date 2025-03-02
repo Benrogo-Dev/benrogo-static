@@ -454,3 +454,26 @@ td {
     color: var(--secondary-accent-color);
     text-shadow: 0 0 10px var(--secondary-accent-color);
 }
+
+.notification-box {
+    position: fixed;
+    top: 30%;
+    right: 0px;
+    max-width: 400px;
+    transform: translateY(-50%);
+    background-color: #ff00ff;
+    z-index: 100;
+}
+
+.notification-box p {
+    color: #000000;
+}
+
+.notification-box div.progressbar {
+    position: relative;
+    bottom: 0px;
+    height: 6px;
+    width: 100%;
+    transition: width 6s ease-in-out;
+    background-color: #00ffff;
+}
