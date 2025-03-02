@@ -1,0 +1,15 @@
+.main-content {
+    max-width: 90vw;
+    width: 800px;
+}
+
+.main-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.credits-name {
+    font-size: 1.4rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
