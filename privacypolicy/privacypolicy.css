@@ -1,3 +1,91 @@
-body {
-    overflow-y: auto;
+section {
+    margin: 2rem 0;
+    text-align: left;
+    width: 100%;
+}
+
+section h2 {
+    color: var(--accent-color);
+    text-shadow: 0 0 8px var(--accent-color);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+}
+
+section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+section ul li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+section ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    text-shadow: 0 0 5px var(--accent-color);
+}
+
+section ul li strong {
+    color: var(--secondary-accent-color);
+    text-shadow: 0 0 5px var(--secondary-accent-color);
+    font-weight: bold;
+}
+
+section p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+section a {
+    color: var(--accent-color) !important;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+section a:hover {
+    color: var(--secondary-accent-color) !important;
+    text-shadow: 0 0 8px var(--secondary-accent-color) !important;
+}
+
+@media (max-width: 768px) {
+    section {
+        margin: 1.5rem 0;
+    }
+
+    section h2 {
+        font-size: 1.2rem;
+    }
+
+    section ul li,
+    section p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        margin: 1rem 0;
+    }
+
+    section h2 {
+        font-size: 1.1rem;
+    }
+
+    section ul li,
+    section p {
+        font-size: 0.95rem;
+    }
 }
