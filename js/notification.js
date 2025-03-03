@@ -4,7 +4,7 @@ function displayNotification(message) {
     document.body.appendChild(notificationElement);
 
     const notificationText = document.createElement("p");
-    notificationText.innerText = message;
+    notificationText.innerHTML = message;
     notificationElement.appendChild(notificationText);
 
     const closeButton = document.createElement("button");
