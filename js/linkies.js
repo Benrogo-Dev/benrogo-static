@@ -15,6 +15,9 @@ const genRandHex = (size) =>
     .map(() => Math.floor(Math.random() * 16).toString(16))
     .join("");
 
+const genRandInt = (length) => Math.floor(Math.random() * length);
+
+
 function shiftText(text, n) {
   n = n % text.length;
   return text.slice(n) + text.slice(0, n);
@@ -55,7 +58,7 @@ async function getSites() {
   pageNumber.innerText = linksPage;
 
   // Fetch and decode site data
-  const edgeAPIResponse = await fetch(`/edge-api/getSites?page=${linksPage}`);
+  const edgeAPIResponse = await fetch(`https://dev.benrogo.net/edge-api/getSites?page=${linksPage}`);
   const edgeAPIText = await edgeAPIResponse.text();
   const [shiftedText, shiftValue] = edgeAPIText.split(":");
   const unshiftedText = shiftText(shiftedText, Number(shiftValue) * -1);
@@ -96,7 +99,7 @@ async function getSites() {
     // Link column
     const linkColumn = document.createElement("td");
     const link = document.createElement("a");
-    link.href = `/${genRandHex(16)}/${i}`;
+    link.href = `/${genRandInt(79)}/${i}/${genRandInt(79)}/${genRandInt(79)}`;
     link.innerHTML = invisObfuscate(url);
     link.draggable = false;
     link.target = "_blank";
