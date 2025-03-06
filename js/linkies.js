@@ -58,7 +58,7 @@ async function getSites() {
   pageNumber.innerText = linksPage;
 
   // Fetch and decode site data
-  const edgeAPIResponse = await fetch(`https://dev.benrogo.net/edge-api/getSites?page=${linksPage}`);
+  const edgeAPIResponse = await fetch(`/edge-api/getSites?page=${linksPage}`);
   const edgeAPIText = await edgeAPIResponse.text();
   const [shiftedText, shiftValue] = edgeAPIText.split(":");
   const unshiftedText = shiftText(shiftedText, Number(shiftValue) * -1);
