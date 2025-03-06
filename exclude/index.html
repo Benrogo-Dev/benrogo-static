@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclude a Site | Benrogo</title>
+    <meta name="title" content="Exclude a Site | Benrogo">
+    <meta name="description" content="Learn how to exclude your proxy site from Benrogo's index">
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="exclude.css">
+    <link rel="icon" href="/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+</head>
+<body>
+    <nav class="navbar">
+        <div>
+            <a class="nav-header" href="/"><img id="logo" src="/logo.png"> Benrogo.net</a>
+            <a class="nav-item" href="/linkies/">Linkies</a>
+            <a class="nav-item" href="/about/">About</a>
+            <a class="nav-item" href="/partners/">Partners</a>
+            <a class="nav-item" href="/disc">Discord</a>
+        </div>
+    </nav>
+
+    <div class="wrapper">
+        <div class="main-content">
+            <h1>Add these tags to the home page of your proxy site!</h1>
+            
+            <h2>benrogo:index tag</h2>
+            <pre><code>&lt;meta property="benrogo:index", content="INDEX_STATUS"&gt;</code></pre>
+            <p>INDEX_STATUS can be either <code>index</code> or <code>noindex</code>. Setting it to <code>noindex</code> will prevent your site from being indexed on linkies. Default is <code>index</code> if the tag is not there. Useful for if you have a development site you don't want leaked!!</p>
+            
+            <h2>benrogo:uvpath tag</h2>
+            <pre><code>&lt;meta property="benrogo:uvpath", content="PATH_TO_UV_CONFIG"&gt;</code></pre>
+            <p>PATH_TO_UV_CONFIG should be a relative path to your uv.config.js file, such as <code>/static/uv/uv.config.js</code>. This is not necessary but speeds up indexing. If not specified, Benrogo will scan several common paths for uv.config.js instead. If the file path given here returns a 404, your site <strong>will not be indexed</strong></p>
+            
+            <h2>Place these tags in your home page</h2>
+            <p>Add them somewhere between <code>&lt;head&gt;</code> and <code>&lt;/head&gt;</code> in your HTML.</p>
+            <h3>Example:</h3>
+            <pre><code>&lt;head&gt;
+    &lt;title&gt;Super epic proxy site&lt;/title&gt;
+    &lt;link rel="stylesheet" href="/index.css"&gt;
+    &lt;meta property="benrogo:index", content="index"&gt;
+    &lt;meta property="benrogo:uvpath", content="/static/uv/uv.config.js"&gt;
+&lt;/head&gt;</code></pre>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-items">
+            <a href="/privacypolicy/">Privacy Policy</a>
+            <a href="/contact/">Contact Us</a>
+            <a href="/status/">Network Status</a>
+            <a href="/byod/">BYOD</a>
+            <a href="/donate/">Donate</a>
+            <a href="/credits/">Credits</a>
+        </div>
+        <p>Copyright &copy; 2025 Benrogo. All rights reserved.</p>
+    </footer>
+    <div id="particles-js"></div>
+    <script src="/js/particles.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/notification.js"></script>
+    <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
+</body>
+</html>
