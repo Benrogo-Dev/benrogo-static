@@ -1,2 +1,3 @@
 /linkies
+  X-Frame-Options: DENY
   Content-Security-Policy: script-src 'self' https://instant.page; object-src 'none'; style-src 'self';
