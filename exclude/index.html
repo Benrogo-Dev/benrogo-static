@@ -3,9 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary Meta Tags -->
     <title>Exclude a Site | Benrogo</title>
     <meta name="title" content="Exclude a Site | Benrogo">
-    <meta name="description" content="Learn how to exclude your proxy site from Benrogo's index">
+    <meta name="description" content="Instructions to exclude a site from Benrogo">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://benrogo.net/">
+    <meta property="og:title" content="Exclude a Site | Benrogo">
+    <meta property="og:description" content="Instructions to exclude a site from Benrogo">
+    <meta property="og:image" content="/images/banner.png">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://benrogo.net/">
+    <meta property="twitter:title" content="Exclude a Site | Benrogo">
+    <meta property="twitter:description" content="Instructions to exclude a site from Benrogo">
+    <meta property="twitter:image" content="/images/banner.png">
+
     <link rel="stylesheet" href="/index.css">
     <link rel="stylesheet" href="exclude.css">
     <link rel="icon" href="/favicon.png">
@@ -27,22 +41,22 @@
             <h1>Add these tags to the home page of your proxy site!</h1>
             
             <h2>benrogo:index tag</h2>
-            <pre><code>&lt;meta property="benrogo:index", content="INDEX_STATUS"&gt;</code></pre>
+            <pre><code class="highlight">&lt;<span class="tag">meta</span> <span class="attr">property</span>=<span class="value">"benrogo:index"</span> <span class="attr">content</span>=<span class="value">"INDEX_STATUS"</span>&gt;</code></pre>
             <p>INDEX_STATUS can be either <code>index</code> or <code>noindex</code>. Setting it to <code>noindex</code> will prevent your site from being indexed on linkies. Default is <code>index</code> if the tag is not there. Useful for if you have a development site you don't want leaked!!</p>
             
             <h2>benrogo:uvpath tag</h2>
-            <pre><code>&lt;meta property="benrogo:uvpath", content="PATH_TO_UV_CONFIG"&gt;</code></pre>
+            <pre><code class="highlight">&lt;<span class="tag">meta</span> <span class="attr">property</span>=<span class="value">"benrogo:uvpath"</span> <span class="attr">content</span>=<span class="value">"PATH_TO_UV_CONFIG"</span>&gt;</code></pre>
             <p>PATH_TO_UV_CONFIG should be a relative path to your uv.config.js file, such as <code>/static/uv/uv.config.js</code>. This is not necessary but speeds up indexing. If not specified, Benrogo will scan several common paths for uv.config.js instead. If the file path given here returns a 404, your site <strong>will not be indexed</strong></p>
             
             <h2>Place these tags in your home page</h2>
             <p>Add them somewhere between <code>&lt;head&gt;</code> and <code>&lt;/head&gt;</code> in your HTML.</p>
             <h3>Example:</h3>
-            <pre><code>&lt;head&gt;
-    &lt;title&gt;Super epic proxy site&lt;/title&gt;
-    &lt;link rel="stylesheet" href="/index.css"&gt;
-    &lt;meta property="benrogo:index", content="index"&gt;
-    &lt;meta property="benrogo:uvpath", content="/static/uv/uv.config.js"&gt;
-&lt;/head&gt;</code></pre>
+            <pre><code class="highlight">&lt;<span class="tag">head</span>&gt;
+    &lt;<span class="tag">title</span>&gt;Super epic proxy site&lt;/<span class="tag">title</span>&gt;
+    &lt;<span class="tag">link</span> <span class="attr">rel</span>=<span class="value">"stylesheet</span>" <span class="attr">href</span>=<span class="value">"/index.css"</span>&gt;
+    &lt;<span class="tag">meta</span> <span class="attr">property</span>=<span class="value">"benrogo:index"</span> <span class="attr">content</span>=<span class="value">"index"</span>&gt;
+    &lt;<span class="tag">meta</span> <span class="attr">property</span>=<span class="value">"benrogo:uvpath"</span> <span class="attr">content</span>=<span class="value">"/static/uv/uv.config.js"</span>&gt;
+&lt;/<span class="tag">head</span>&gt;</code></pre>
         </div>
     </div>
 

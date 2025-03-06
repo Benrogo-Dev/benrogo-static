@@ -1,3 +1,9 @@
+:root {
+    --tag-color: #E526CB;
+    --attr-color: #24f2e1;
+    --value-color: #f23029;
+}
+
 pre {
     background-color: var(--secondary-bg-color);
     padding: 15px;
@@ -24,6 +30,10 @@ pre code {
     padding: 0;
     background-color: transparent;
 }
+
+.tag { color: var(--tag-color) }
+.attr { color: var(--attr-color) }
+.value { color: var(--value-color) }
 
 h2 {
     color: var(--secondary-accent-color);
