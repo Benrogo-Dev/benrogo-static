@@ -4,6 +4,11 @@
     --value-color: #f23029;
 }
 
+.code-container {
+    position: relative;
+    margin: 20px 0;
+}
+
 pre {
     background-color: var(--secondary-bg-color);
     padding: 15px;
@@ -11,8 +16,28 @@ pre {
     border: 2px solid var(--accent-color);
     box-shadow: 0 0 10px var(--accent-color);
     overflow-x: auto;
-    margin: 20px 0;
+    margin: 0;
     text-align: left;
+}
+
+.copy-btn {
+    position: absolute;
+    right: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--secondary-bg-color);
+    border: 2px solid var(--accent-color);
+    color: var(--text-color);
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+    background-color: var(--accent-color);
+    color: var(--secondary-bg-color);
+    box-shadow: 0 0 10px var(--accent-color);
 }
 
 code {
