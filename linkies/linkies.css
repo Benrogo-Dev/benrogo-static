@@ -40,3 +40,25 @@ td a > span {
 .page-button-hidden {
     visibility: hidden;
 }
+
+.help-icon {
+    font-size: 1.15em;
+    color: var(--accent-color);
+    text-decoration: none;
+    margin-left: 1px;
+    text-shadow: 0 0 8px var(--accent-color);
+    transition: all 0.3s ease;
+}
+
+.help-icon:hover {
+    color: var(--secondary-accent-color);
+    text-shadow: 0 0 12px var(--secondary-accent-color);
+    transform: translateY(-2px);
+}
+
+.exclude-info {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
