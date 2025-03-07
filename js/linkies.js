@@ -45,7 +45,7 @@ function invisObfuscate(str) {
 function handleRedirect(event) {
   event.preventDefault();
   const hrefChunks = event.target.href.split("/");
-  const id = Number(hrefChunks[hrefChunks.length - 1]);
+  const id = Number(hrefChunks[hrefChunks.length - 3]);
   console.log(sitesJSON[id]);
   window.open(atob(sitesJSON[id]["u"]), "_blank");
 }
