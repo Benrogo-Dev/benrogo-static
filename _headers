@@ -3,4 +3,4 @@ https://:dev.benrogo.net/*
 
 /linkies/
   X-Frame-Options: DENY
-  Content-Security-Policy: script-src 'self' https://instant.page https://static.cloudflareinsights.com; object-src 'none'; style-src 'self';
+  Content-Security-Policy: script-src 'self' 'unsafe-eval' https://instant.page https://static.cloudflareinsights.com; object-src 'none'; style-src 'self';
