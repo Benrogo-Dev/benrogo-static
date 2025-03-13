@@ -4,57 +4,58 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 
 <url>
-  <loc>https://dev.benrogo.net/</loc>
-  <lastmod>2025-02-27T20:30:11+00:00</lastmod>
+  <loc>https://benrogo.net/</loc>
+  <lastmod>2025-03-13T16:53:15+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://dev.benrogo.net/linkies/</loc>
-  <lastmod>2025-02-27T20:30:11+00:00</lastmod>
+  <loc>https://benrogo.net/linkies/</loc>
+  <lastmod>2025-03-13T16:53:15+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://dev.benrogo.net/about/</loc>
-  <lastmod>2025-02-27T20:30:11+00:00</lastmod>
+  <loc>https://benrogo.net/about/</loc>
+  <lastmod>2025-03-13T16:53:15+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://dev.benrogo.net/partners/</loc>
-  <lastmod>2025-02-27T20:30:11+00:00</lastmod>
+  <loc>https://benrogo.net/partners/</loc>
+  <lastmod>2025-03-13T16:53:15+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://dev.benrogo.net/privacypolicy/</loc>
-  <lastmod>2025-02-27T20:30:11+00:00</lastmod>
+  <loc>https://benrogo.net/privacypolicy/</loc>
+  <lastmod>2025-03-13T16:53:15+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://dev.benrogo.net/contact/</loc>
-  <lastmod>2025-02-27T20:30:11+00:00</lastmod>
+  <loc>https://benrogo.net/contact/</loc>
+  <lastmod>2025-03-13T16:53:15+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://dev.benrogo.net/status/</loc>
-  <lastmod>2025-02-27T20:30:11+00:00</lastmod>
+  <loc>https://benrogo.net/byod/</loc>
+  <lastmod>2025-03-13T16:53:15+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://dev.benrogo.net/byod/</loc>
-  <lastmod>2025-02-27T20:30:11+00:00</lastmod>
+  <loc>https://benrogo.net/donate/</loc>
+  <lastmod>2025-03-13T16:53:15+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://dev.benrogo.net/donate/</loc>
-  <lastmod>2025-02-27T20:30:11+00:00</lastmod>
+  <loc>https://benrogo.net/credits/</loc>
+  <lastmod>2025-03-13T16:53:15+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://dev.benrogo.net/credits/</loc>
-  <lastmod>2025-02-27T20:30:11+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://benrogo.net/linkies/exclude/</loc>
+  <lastmod>2025-03-13T16:53:15+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 
 
