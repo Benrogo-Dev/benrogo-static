@@ -92,7 +92,7 @@ async function handleRequest(request, env) {
     return response;
   }
 
-  return new Response("Nice try diddy");
+  return env.ASSETS.fetch(request);
 }
 
 export default { fetch: handleRequest };
