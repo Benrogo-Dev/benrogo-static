@@ -1,3 +1,16 @@
+/*
+Edge-API worker code
+
+If you are editing this, please note that
+D1 database queries will not work, as it
+would require everyone to set up a database
+in Cloudflare and somehow link it to the
+central database, which just isn't viable
+for the time being. This does mean that if
+the main API goes offline, so will the APIs
+hosted in here,
+*/
+
 // Text shifting function (for obfuscation)
 function shiftText(text, n) {
   n = n % text.length;
