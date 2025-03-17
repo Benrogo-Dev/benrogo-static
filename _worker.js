@@ -80,7 +80,7 @@ async function handleRequest(request, env) {
 
   // Try local DB first, if that fails then try edge DB
 if (pathname === "/envtest") {
-  return new Response(JSON.stringify(env.DB));
+  return new Response(env.DB.prepare);
 }
 
   if (fetchConfig[pathname]) {
