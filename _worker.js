@@ -1,3 +1,4 @@
+// Text shifting function (for obfuscation)
 function shiftText(text, n) {
   n = n % text.length;
   return text.slice(n) + text.slice(0, n);
@@ -7,9 +8,11 @@ async function fetchData(url, dbQuery, dbParams, env, fallbackSource, transformD
   const response = await fetch(url);
   if (response.ok) {
     return { results: await response.json(), source: "LOCAL-DB" };
-  } else {
+  } else if (env.EDGEDB_ENABLED === "true") {
     const dbResponse = await env.DB.prepare(dbQuery).bind(...dbParams).all();
     return { results: transformDBResult(dbResponse.results), source: fallbackSource };
+  } else {
+    return null;
   }
 }
 
@@ -23,6 +26,7 @@ async function handleRequest(request, env) {
   if (response) return new Response(response.body, response);
 
   let fetchConfig = {
+    // Stats API (home page information)
     "/edge-api/getStats": {
       apiUrl: "https://api.benrogo.net/edge-api/getStats",
       dbQuery: "SELECT * FROM stats",
@@ -32,6 +36,7 @@ async function handleRequest(request, env) {
       headers: { "Content-Type": "application/json" },
       cacheEnabled: true,
     },
+    // Sites API (Linkies page list)
     "/edge-api/getSites": {
       apiUrl: `https://api.benrogo.net/edge-api/getSites?page=${Number(searchParams.get("page")) || 1}`,
       dbQuery: "SELECT url,request_count,check_status FROM site_summary ORDER BY request_count DESC LIMIT ?,81",
@@ -51,6 +56,7 @@ async function handleRequest(request, env) {
       headers: { "Content-Type": "text/plain" },
       cacheEnabled: true,
     },
+    // BYOD domain registration API
     "/edge-api/registerBYOD": {
       apiUrl: "https://byod.benrogo.net/registerBYOD",
       dbQuery: null,
@@ -60,6 +66,7 @@ async function handleRequest(request, env) {
       headers: { "Content-Type": "application/json" },
       cacheEnabled: false,
     },
+    // Announcements / notifications API
     "/edge-api/getAnnouncement": {
       "apiUrl": "https://api.benrogo.net/edge-api/getAnnouncement",
       dbQuery: null,
@@ -71,6 +78,7 @@ async function handleRequest(request, env) {
     },
   };
 
+  // Try local DB first, if that fails then try edge DB
   if (fetchConfig[pathname]) {
     const { apiUrl, dbQuery, dbParams, transformDBResult, formatResponse, headers, cacheEnabled } = fetchConfig[pathname];
     if (dbQuery) {
@@ -92,6 +100,7 @@ async function handleRequest(request, env) {
     return response;
   }
 
+  // If request doesn't match an edge-api path, try static files
   return env.ASSETS.fetch(request);
 }
 
