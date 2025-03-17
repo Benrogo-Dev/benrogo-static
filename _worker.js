@@ -8,11 +8,9 @@ async function fetchData(url, dbQuery, dbParams, env, fallbackSource, transformD
   const response = await fetch(url);
   if (response.ok) {
     return { results: await response.json(), source: "LOCAL-DB" };
-  } else if (env.EDGEDB_ENABLED === "true") {
+  } else  {
     const dbResponse = await env.DB.prepare(dbQuery).bind(...dbParams).all();
     return { results: transformDBResult(dbResponse.results), source: fallbackSource };
-  } else {
-    return null;
   }
 }
 
