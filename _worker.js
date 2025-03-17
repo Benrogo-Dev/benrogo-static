@@ -79,6 +79,10 @@ async function handleRequest(request, env) {
   };
 
   // Try local DB first, if that fails then try edge DB
+if (pathname === "/envtest") {
+  return new Response(JSON.stringify(env));
+}
+
   if (fetchConfig[pathname]) {
     const { apiUrl, dbQuery, dbParams, transformDBResult, formatResponse, headers, cacheEnabled } = fetchConfig[pathname];
     if (dbQuery) {
