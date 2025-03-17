@@ -16,7 +16,6 @@ async function fetchData(url, dbQuery, dbParams, env, fallbackSource, transformD
   }
 }
 
-// Request handler
 async function handleRequest(request, env) {
   const cache = caches.default;
   const url = new URL(request.url);
