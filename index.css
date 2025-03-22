@@ -8,6 +8,7 @@
 
 * {
     -ms-overflow-style: none;
+    z-index: 1;
 }
 
 *::-webkit-scrollbar {
@@ -20,7 +21,7 @@ body {
     height: 100vh;
     margin: 0;
     overflow-x: hidden;
-    color: var(--text-color);
+    color: var(--main-bg-color);
     display: flex;
     flex-direction: column;
     overflow: auto;
@@ -231,7 +232,7 @@ footer p {
     position: fixed;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: 0;
     top: 0;
     left: 0;
     min-height: 100vh;
@@ -274,13 +275,11 @@ footer p {
     100% { box-shadow: 0 0 15px var(--accent-color); }
 }
 
-p,
-h1,
-a,
-td {
+:is(nav, footer, .wrapper) :is(p, h1, a, td) {
     text-shadow: 0 0 5px #ffffff, 0 0 15px var(--accent-color);
     color: var(--text-color);
 }
+
 
 .main-content h1 {
     font-size: 2rem;
