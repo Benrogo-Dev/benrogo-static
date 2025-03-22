@@ -1,6 +1,0 @@
-https://:dev.benrogo.net/*
-  X-Robots-Tag: noindex
-
-/linkies/
-  X-Frame-Options: DENY
-  Content-Security-Policy: script-src 'self' 'unsafe-eval' https://instant.page https://static.cloudflareinsights.com; object-src 'none'; style-src 'self';
