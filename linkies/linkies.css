@@ -80,3 +80,13 @@ td a > span {
     font-size: 0.9rem;
     opacity: 0.8;
 }
+
+ins.adsbygoogle {
+    width: 80vw;
+}
+
+@media(max-width: 768px) {
+    ins.adsbygoogle {
+        width: 100vw;
+    }
+}

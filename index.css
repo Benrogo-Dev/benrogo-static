@@ -435,6 +435,10 @@ footer p {
 }
 
 @media (max-width: 768px) {
+    .linkies-table {
+        width: 100vw;
+    }
+
     .pagination-controls {
         font-size: 1.2rem;
     }
