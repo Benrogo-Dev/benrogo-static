@@ -1,3 +1,24 @@
+
+(function() {
+  const key = 'pageLoadEffectLevel';
+  let level = parseInt(localStorage.getItem(key) || '0', 10);
+  level += 1;
+  localStorage.setItem(key, level);
+
+  const overlay = document.createElement('div');
+  overlay.style.position = 'fixed';
+  overlay.style.top = 0;
+  overlay.style.left = 0;
+  overlay.style.width = '100%';
+  overlay.style.height = '100%';
+  overlay.style.zIndex = 9999;
+  overlay.style.pointerEvents = 'none';
+  overlay.style.backdropFilter = `blur(${level*0.04}px)`;
+  overlay.style.backgroundColor = `rgba(0, 0, 0, ${Math.min(0.004 * level, 0.9)})`;
+
+  document.body.appendChild(overlay);
+})();
+
 particlesJS('particles-js',
   
   {
