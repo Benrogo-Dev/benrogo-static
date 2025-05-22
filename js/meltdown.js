@@ -71,7 +71,7 @@ if (!localStorage.getItem("animationPlayed")) {
   });
   
   const timer = setInterval(() => {
-    if (document.body.querySelectorAll("*:not(#meltdown)").length) {
+    if (document.body.querySelectorAll("*:not(script)").length) {
       console.log("Not done yet");
     } else {
       console.log("DONE");
