@@ -73,4 +73,4 @@ async function handleAnnouncement() {
     }
 }
 
-document.addEventListener("load", handleAnnouncement());
+//document.addEventListener("load", handleAnnouncement());

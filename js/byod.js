@@ -19,4 +19,4 @@ async function registerBYOD(event) {
     }
 }
 
-document.getElementById("submit-button").addEventListener("click", registerBYOD);
+//document.getElementById("submit-button").addEventListener("click", registerBYOD);

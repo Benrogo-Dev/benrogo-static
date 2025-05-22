@@ -20,4 +20,4 @@ async function getStats() {
     }
 }
 
-document.addEventListener("load", getStats());
+//document.addEventListener("load", getStats());

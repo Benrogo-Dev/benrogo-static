@@ -118,4 +118,4 @@ async function getSites() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", getSites);
+//document.addEventListener("DOMContentLoaded", getSites);
